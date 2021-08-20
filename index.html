@@ -17,9 +17,50 @@
 
 <!--Our CSS-->
 <link rel="stylesheet" href="style.css">
-    <title>TASKLY</title>
+    <title>TASKY</title>
 </head>
 <body>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add New Task</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <div class="mb-3">
+          <label for="imageurl" class="form-label">Image Url</label>
+          <input type="url" class="form-control" id="imageurl" placeholder="https://images.hello.com/hello.png">
+        </div>
+
+        <div class="mb-3">
+          <label for="tasktitle" class="form-label">Task Title</label>
+          <input type="text" class="form-control" id="tasktitle" placeholder="Learn Web Dev">
+        </div>
+
+        <div class="mb-3">
+          <label for="tasktype class="form-label">Task Type</label>
+          <input type="text" class="form-control" id="tasktype" placeholder="Development">
+        </div>
+
+        <div class="mb-3">
+          <label for="taskdescription class="form-label">Task Description</label>
+          <textarea 
+          rows="6" type="text" class="form-control" id="taskdescription" placeholder="Buliding an amazing Website!">
+          </textarea>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="saveChanges()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
    
      <!--Navbar-->
      <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm">
@@ -37,7 +78,7 @@
               </li>
               
             </ul>
-            <button type="button" class="btn btn-primary">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
               <i class="fas fa-plus"></i>
               Add New</button>
           </div>
@@ -58,7 +99,7 @@
         </section>
         <!--Card-->
         <section>
-         <div class="row">
+         <div class="row task__container">
            <div class="col-md-6 col-lg-4">
             <div class="card ">
               <div class="card-header d-flex justify-content-end gap-2">
@@ -93,6 +134,7 @@
          integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
           crossorigin="anonymous">
         </script>
-
+        <!--JS file-->
+        <script src="index.js"></script>
 </body>
 </html>
